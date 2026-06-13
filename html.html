@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Guia</title>
+</head>
+<body>
+  <a id="voltar" href="inicio.html">Voltar</a>
+  <header>
+    <h1> HTML - Elementos, Atributos, e Exemplos</h1>
+    <nav>  
+      <h2>Tópicos Gerais</h2>
+        <ul>
+          <li><a href="#elementos">Elementos</a></li>
+          <li><a href="#atributos">Atributos</a></li>
+          <li><a href="#explicacoes">Explicações/Conceitos Importantes</a></li>
+          <li><a href="#boilerplate">Boilerplate (estrutura padrão)</a></li>
+        </ul>
+    </nav>
+  </header>
+ 
+  <section id="elementos"> 
+    <h1>Elementos</h1>
+      <h2>Tipos de Elementos</h2>
+        <ul>
+          <li><a href="#essenciais">Principais dos Metadados</a></li>
+          <li><a href="#principais">Principais Para Escrita do Site no Geral</a></li>
+          <li><a href="#alem">Principais para a Formação Além da Escrita</a></li>
+          <li><a href="#alteradores">Alteradores de Texto</a></li>              
+          <li><a href="#semanticospt1">Semânticos Pt.1 (Principais)</a></li>
+          <li><a href="#semanticospt2">Semânticos Pt.2 (Importantes, mas menos que os anteriores)</a></li>
+        </ul>
+
+    <section id="essenciais">
+      <h3>Principais Elementos Presentes nos Metadados</h3>
+
+        <h4>- html</h4>
+          <p>Apesar de soar meio estranho, sim, é um elemento presente na estrutura de uma página, onde, literalmente, TODO o código está presente dentro dele, geralmente é atribuído um único atributo a ele, que é o da linguagem da página, porém, nunca esquecer, que ele inicia o código (logo depois da declaração - será vista mais pra frente em <a href="#explicacoes">Explicações/Conceitos Importantes</a>) e dita o término do código.</p>
+          <h5>Exemplo:</h5>
+          <pre>
+            <code>
+              &lt;html lang="en"&gt; (onde nesse caso, a linguagem utilizada seria inglês)
+                <em>código da página inteira</em>
+              &lt;/html&gt;
+            </code>
+          </pre>
+        
+        <h4>- head</h4>
+          <p>É basicamente o elementos no qual abrigará todo seu código feito dos metadados do documento em questão.</p>
+          <h5>Exemplo:</h5>
+          <pre>
+            <code>
+              &lt;head&gt; 
+                <em>conteúdo/códigos relacionados aos metadados (será aprofundado posteriormente)</em>
+              &lt;/head&gt;
+            </code>
+          </pre>
+
+        <h4>- meta</h4>
+          <p>Um elemento vazio, e provavelmente o mais importante elemento presente dentro dos metadados de um documento, por basicamente definir tudo que se espera encontrar dentro do mesmo, podendo ter diversos atributos específicos para ele, lembrando que, cada atributo, por assumir geralmente 1 valor por vez, cria a necessidade de em apenas 1 documento, se ter diversos elementos de <code>&lt;meta/&gt;</code>. Veja mais em: <a href="#atributosmetadados">Atributos para Metadados</a> </p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;meta <em>atributo="valor"</em>/&gt;
+              </code>
+            </pre>
+
+        <h4>- title</h4>      
+          <p>Como o próprio nome já diz, determina o título do seu site, não visualmente, mas por exemplo, para o navegador, é uma das formas na qual a busca pode ir parar no seu site.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;title&gt;<em>seu título</em>&lt;/title&gt;
+              </code>
+            </pre>
+
+        <h4>- link</h4>
+          <p>Apesar de não ser um elemento vazio exclusivo apenas para a parte de metadados, é muito presente na mesma, tendo como principal função nesse caso, definir o estilo (principalmente com css), do site em questão, através de um link (como o próprio nome sugere) - sua função mais geral, será aprofundada posteriormente durante <a href="#principais">Principais para a Formação Além da Escrita</a>.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;link rel="" href=""/&gt; -> tanto o atributo "rel" quanto o atributo "href" será visto posteriormente em <a href="#atributos">Atributos</a>.
+              </code>
+            </pre>
+    </section>
+
+    <section id="principais">
+      <h3>Principais Elementos Presentes na Escrita do Site</h3>
+
+        <h4>- h 1-6</h4>
+          <p>Inicialmente, pode parecer estranho a escrita do código, porém, é simples de entender, é basicamente o que dita os títulos e subtítulos de um site, em ordem de importância (e de tamanho geralmente), sendo o <code>&lt;h1&gt;</code> o com mais relevância, e o <code>&lt;h6&gt;</code> com menos relevância no site.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;hX&gt;<em>título/subtítulo</em>&lt;/hX&gt; -> onde X representa um número de 1-6, a depender da importância.
+              </code>
+            </pre>
+
+        <h4>- p</h4>
+          <p>Provavelmente o elemento mais utilizado na formação de sites (front-end), a grosso modo, é basicamente toda e qualquer escrita com exceção de situações especifícas como título, etc - mas é disparado o mais utilizado, tendo como um significado válido, tal qual sua letra representante: paragráfo.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;p&gt;<em>paragráfo (podendo ser texto, frase, etc)</em>&lt;/p&gt;
+              </code>
+            </pre>
+          
+        <h4>- a</h4>
+          <p>O famoso "âncora", apesar de não ser algo exclusivo na formação de frases, uma das suas principais funções é justamente, a "indexização" de um link ou redirecionamento geral, em uma frase, palavra, etc, com o auxílio de um atributo, o <code>href=""</code>, que será visto posteriormente em <a href="#atributos">Atributos</a>.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;a href="<em>local de redirecionamento</em>"&gt; <em>frase, palavra, etc...</em>&lt;/a&gt;
+              </code>
+            </pre>
+
+        <h4>- ul</h4>
+          <p>Utilizado para a criação de uma lista não ordenada, sendo os seus tópicos, definidos pelo elemento <code>&lt;li&gt;</code>, que será visto nos próximos tópicos ainda nessa seção.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;ul&gt;
+                  &lt;li&gt;<em>conteúdo</em>&lt;/li&gt;
+                  &lt;li&gt;<em>conteúdo</em>&lt;/li&gt;
+                  &lt;li&gt;<em>conteúdo</em>&lt;/li&gt;
+                &lt;/ul&gt;
+              </code>
+            </pre>
+
+        <h4>- ol</h4>
+          <p>Utilizado para a criação de uma lista ordenada (1. 2. 3. ...)(em ordem de importância, de sequência lógica, etc), sendo os seus tópicos, definidos pelo elemento <code>&lt;li&gt;</code>, que será visto no próximo tópico.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;ol&gt;
+                  &lt;li&gt;<em>conteúdo</em>&lt;/li&gt;
+                  &lt;li&gt;<em>conteúdo</em>&lt;/li&gt;
+                  &lt;li&gt;<em>conteúdo</em>&lt;/li&gt;
+                &lt;/ol&gt;
+              </code>
+            </pre>
+
+        <h4>- li</h4>
+          <p>Como citado anteriormente, é utilizado para fazer listas, sendo geralmente, filho do <code>&lt;ul&gt;</code> ou do <code>&lt;ol&gt;</code>. Veja mais sobre relação de "pai e filho" em: <a href="#explicacoes">Explicações/Conceitos Importantes</a>.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;ol&gt; ou &lt;ul&gt;
+                  &lt;li&gt;<em>conteúdo</em>&lt;/li&gt;
+                  &lt;li&gt;<em>conteúdo</em>&lt;/li&gt;
+                  &lt;li&gt;<em>conteúdo</em>&lt;/li&gt;
+                &lt;/ol&gt; ou &lt;/ul&gt; 
+              </code>
+            </pre>
+
+        <h4>- dt</h4>
+          <p>Utilizado envolta de termos que serão descritos, explicados por um outro elemento: o <code>&lt;dd&gt;</code>, que será visto logo a diante.</p>
+          <h5>Exemplo:</h5> 
+            <pre>
+              <code>
+                &lt;dt&gt;<em>elemento descrito</em>&lt;/dt&gt;
+              </code>
+            </pre>
+
+        <h4>- dd</h4>
+          <p>Usado para descrever algum elemento anterior a ele, englobado pelo <code>&lt;dt&gt;</code>, o conteúdo presente dentro desse elemento, por padrão, já fica afastado da margem.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;dt&gt;<em>elemento descrito</em>&lt;/dt&gt;
+                  &lt;dd&gt;<em>descrição</em>&lt;/dd&gt;
+              </code>
+            </pre>
+    </section>
+
+    <section id="alem">
+      <h3>Principais Elementos Presentes no Site Além da Escrita</h3>
+
+        <h4>- img</h4>
+          <p>Como o próprio nome sugere, é um elemento vazio utilizado para anexar uma imagem na site, utilizando-se diversos atributos para uma melhor experiência e aproveitamento de tal elemento, note que, obrigatoriamente, sempre se terá um atributo ao menos, visto que, o elemento sozinho, não é capaz de ter uma imagem por si só.</p>
+          <h5>Exemplo></h5>
+            <pre>
+              <code>
+                &lt;img src="<em>link da imagem</em>"/&gt; -> o atributo "src" será visto posteriormente em <a href="#atributos">Atributos</a>.
+              </code>
+            </pre>
+
+        <h4>- input</h4>
+          <p>Elemento vazio, utilizado para coletar dados dos usuários, podendo assumir diversos "tipos" (checkbox, escrita, etc), a depender dos valores de certos atributos acompanhados a ele.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;input type="button"/&gt; -> o atributo "type" será visto posteriormente em <a href="#atributos">Atributos</a>, assim comos seus possíveis valores.
+              </code>
+            </pre>
+
+        <h4>- link</h4>
+          <p>Como citada anteriormente na seção de <a href="#essenciais">Metadados</a>, tem como principal objetivo, a colocação de um link para alguma função específica, sendo majoritariamente, para a utilização de estilos, etc. Curiosidade: Google Fonts é um bom lugar para achar links para esse elemento.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;link rel="" href=""/&gt; -> tanto o atributo "rel" quanto o atributo "href" será visto posteriormente em <a href="#atributos">Atributos</a>.
+              </code>
+            </pre>
+
+        <h4>- script</h4>
+          <p>Utilizado para executar ou carregar um código JavaScript na página, apesar de não ser a forma mais comum de se aplicar um código desses - geralmente é posto em outro documento e esse elemento serve apenas como "ativação" - é bom ter noção que se pode se escrever o código JavaScript dentro dele.</p>
+
+        <h4>- button</h4>
+          <p>Obviamente, é usado para formar um botão, onde, diferentemente do <code>&lt;input/&gt;</code>, por esse elemento não ser vazio, o torna mais "flexível" por assim dizer, no quesito de adicionar conteúdos nele. Geralmente utilizado junto do elemento <code>&lt;form&gt;</code>.</p>
+
+        <h4>- audio</h4>
+          <p>Autoexplicativo, suporta arquivos como: .mp3, .wav, .ogg.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;audio <em>uma cacetada de atributos</em>&gt; &lt;source src=""/&gt; &lt;/audio&gt; -> explicação do <code>&lt;source/&gt;</code> e dos atributos relacionados aos 2, mais a frente da página.
+              </code>
+            </pre>
+
+        <h4>- video</h4>
+          <p>Mesma coisa do de cima, só que né, para vídeos.</p>
+
+        <h4>- picture</h4>
+
+        <h4>- source</h4>
+          <p>Como demonstrado anteriormente, será utilizado juntamente de algum elemento para a anexação de um conteúdo, porém, terá como principal papel, realmente ditar qual será a extensão/conteúdo demontrado - um exemplo de sua funcionalidade, é, colocar diversos elementos desse em questão, para prevenir erros do navegador com a extensão do arquivo original.</p>     
+          <h5>Exemplo (utilizando audio):</h5>
+            <pre>
+              <code>
+                &lt;audio controls&gt;
+                  &lt;source src="LINK.ogg" type="audio/ogg" /&gt;
+                  &lt;source src="LINK.wav" type="audio/wav" /&gt;         -> todos os elementos e atributos mostrados, serão explicados posteriormente.
+                  &lt;source src="LINK.mp3" type="audio/mpeg" /&gt;
+                &lt;/audio&gt;
+              </code>
+            </pre>
+
+        <h4>- svg</h4>
+          <p>Utilizado para adicionar imagens vetoriais, utilizando formas matemáticas, a fim de evitar a perda de qualidade que se teria em imagens .jpg e .png - elemento usado principalmente para ícones, logosl, gráficos, pode ser manipulado por CSS e JavaScript, porém, é mais comum utilizar-se bibliotecas de ícones, como: Font Awesome.</p>
+          <h5>- circle</h5>
+          <h5>- path</h5>
+            <p>Ambos seriam filhos do <code>&lt;svg&gt;</code> que ajudariam na confecção da imagem vetorial.</p>
+
+        <h4>- iframe</h4>
+          <p>Anexa um site externo no seu próprio em uma janela reduzida, através de um link por exemplo - usos mais comuns incluem: vídeos do YouTube, e mapas do Google Maps</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;iframe src="" title="" width="" height=""&gt;&lt;/iframe&gt; -> os diversos atributos atribuídos ao <code>&lt;iframe&gt;</code> serão abordados futuramente em: <a href="#atributos">Atributos</a>.
+              </code>
+            </pre>
+
+        <h4>- figcaption</h4>
+          <p>Utilizado para adicionar uma descrição em uma mídia anterior a ela.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;figure&gt;
+                  &lt;img/&gt;
+                  &lt;figcaption&gt;<em>descrição</em>&lt;/figcaption&gt;
+                &lt;/figure&gt;
+              </code>
+            </pre>
+
+        <h4>- select, option</h4>
+          <p>Dois elementos utilizados para a criação de um menu selecionável.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;label for="carros"&gt;Escolha um carro:&lt;/label&gt;
+                &lt;select id="carros" name="carros"&gt;
+                  &lt;option value=""&gt;X&lt;/option&gt;
+                  &lt;option value=""&gt;Y&lt;/option&gt;          -> Informações acerca dos atributos, será visto posteriormente em <a href="#atributos">Atributos</a>
+                  &lt;option value=""&gt;Z&lt;/option&gt;
+                &lt;/select&gt;
+              </code>
+            </pre>              
+
+        <h4>- textarea</h4>
+          <p>Utilizado para criar uma caixa de escrita de textos mais extensos, comentários por exemplo.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;label for="comentario"&gt;Comentário:&lt;/label&gt;
+                &lt;textarea id="comentario" name="comentario" rows="5" cols="33" placeholder="Digite Aqui..."&gt;<em>TEXTO</em>&lt;/textarea&gt;
+                (Informações acerca dos atributos, será visto posteriormente em <a href="#atributos">Atributos</a>)
+              </code>
+            </pre>
+    </section>
+
+    <section id="alteradores">
+      <h3>Alteradores de Texto</h3>
+
+        <h4>- em</h4>
+          <p>Utilizado para dar ênfase em uma palavra ou frase, utilizando a característica de "itálico".</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;em&gt;<em>frase destacada</em>&lt;/em&gt;
+              </code>
+            </pre>
+
+        <h4>- strong</h4>
+          <p>Utilizado para dar ênfase em uma palavra ou frase - geralmente de urgência ou importância - utilizando a característica de "negrito".</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;strong&gt;<strong>frase destacada</strong>&lt;/strong&gt;
+              </code>
+            </pre>
+
+        <h4>- font</h4>
+          <p>Utilizado para determinar uma cor e o tamanho de uma palavra ou um texto.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;font size="" color=""&gt;<em>Texto Modificado</em>&lt;/font&gt;
+              </code>
+            </pre>
+
+        <h4>- center</h4>
+          <p>Utilizado para centralizar textos horizontalmente.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;center&gt;<em>O Texto pode ser aqui</em>&lt;p&gt;<em>OU aqui</em>&lt;/p&gt;&lt;/center&gt;
+              </code>
+            </pre>
+
+        <h4>- big</h4>
+          <p>Como o nome indica, faz com que, o trecho ou termos dentro desse elemento, seja maior que o normal.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;p&gt;<em>Texto Texto</em>&lt;big&gt;<strong>Texto Grande</strong>&lt;/big&gt;&lt;/p&gt;
+              </code>
+            </pre>
+
+        <h4>Obs: Apesar de existirem esses três últimos termos citados, que alterem significativamente o texto, eles são considerados termos obsoletos, visto que, linguagens de estilização, como o CSS, permitem uma maior organização e maior facilidade em alterações como essas.</h4>
+    </section>
+
+    <section id="semanticospt1">
+      <h3>Semânticos Parte 1 (Principais)</h3>
+
+        <h4>- div</h4>
+          <p>Apesar de não ser um semântico de fato, por ter um papel semelhante (no sentido de servir como "contâiner" para os elementos), está posto aqui - e como já dito, serve para abrigar conjuntos de elementos, possibilitando através de atributos - class="" por exemplo - uma modificação por CSS ou até JS de uma forma mais global, entretanto, como dito, por não ser um elemento semântico de fato (ver mais sobre a definição de Elementos Semânticos em <a href="#explicacoes">Explicações/Conceitos Importantes</a>, será preferível na maior parte dos casos, o uso de elementos semânticos com usos específicos.</p>
+
+        <h4>- main</h4>
+          <p>Utilizado para representar o conteúdo principal do corpo de um documento HTML, elemento único - ou seja - deve ter apenas 1 por documento.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>   
+                &lt;main&gt;   
+                  &lt;h2&gt;Eeveelutions&lt;/h2&gt;           
+                    &lt;h3&gt;Eevee Antes de Evoluir - Características Importantes e Observações&lt;/h3&gt; 
+                      &lt;p&gt;<em>Texto</em>&lt;/p&gt;
+                &lt;/main&gt;
+              </code>
+            </pre>
+
+        <h4>- section</h4>
+          <p>Utilizado para separar seções em documento - dividir o documento em partes temáticas.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;section&gt;Flareon&lt;/section&gt;
+
+                &lt;section&gt;Jolteon&lt;/section&gt;
+
+                &lt;section&gt;Vaporeon&lt;/section&gt;
+              </code>
+            </pre>
+
+        <h4>- figure</h4>
+          <p>Utilizado para agrupar mídia e descrição - exemplo: imagens + descrição.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;figure&gt;
+                  &lt;img/&gt;
+                  &lt;figcaption&gt;<em>descrição</em>&lt;/figcaption&gt;
+                &lt;/figure&gt;
+              </code>
+            </pre>
+
+        <h4>- footer</h4>
+          <p>Utilizado para definir um rodapé em um site (a parte inferior do site com informações importantes).</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;footer&gt;
+                  &lt;p&gt;Autor: XXX&lt;/p&gt;
+                  &lt;p&gt;&lt;a href="email"&gt;email"&lt;/a&gt;&lt;/p&gt;
+                &lt;/footer&gt;
+              </code>
+            </pre>
+
+        <h4>- nav</h4>
+          <p>Utilizado para agrupar elementos relacionados a links de navegação.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;nav&gt;
+                &lt;a href=""&gt;XXXX&lt;/a&gt;
+                &lt;a href=""&gt;YYYY&lt;/a&gt;
+                &lt;a href=""&gt;ZZZZ&lt;/a&gt;
+                &lt;/nav&gt;
+              </code>
+            </pre>
+
+        <h4>- header</h4>
+          <p>Utilizado para definir o "cabeçalho" do documento.</p>
+
+        <h4>- address</h4>
+          <p>Utilizado para agrupar elementos relacionados a endereços, contatos, etc.</p>
+    </section>
+    
+    <section id="semanticospt2">
+      <h3>Semânticos Parte 2 (Importantes, mas não tanto quanto os da <a href="#semanticospt1">Parte 1</a>)</h3>
+
+        <h4>- i</h4>
+          <p>Usado geralmente em trechos que se tem uma língua diferente do resto do código por exemplo, logo o termo precisará de um destaque/explicação sobre a língua externa - visualmente, a palavra cercada por esse elemento, naturalmente terá sua escrita destacada em itálico.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;p&gt;<em>There is a certain</em>&lt;i lang="fr"&gt;<strong>je ne sais quoi</strong>&lt;/i&gt; <em>in the air.</em>&lt;/p&gt;
+              </code>
+            </pre>
+
+        <h4>- b</h4>
+          <p>Utilizado para destacar um certo trecho ou termo em negrito, destacando uma importância a mais naquela informação semanticamente.</p>
+          
+        <h4>- dl</h4>
+          <p>Utilizado para engloblar/separar uma lista de descrição - formado por termos como <code>&lt;dt&gt; e &lt;dd&gt;</code> por exemplo.</p>
+
+        <h4>- blockquote</h4>
+          <p>Utilizado para separar uma citação do resto do texto, podendo ter atributos como cite="" por exemplo. Ele deixa o texto presente dele mais para o centro da tela horizontalmente.</p>
+
+        <h4>- cite</h4>
+          <p>Apesar de ser utilizado como um atributo em certas ocasiões, ele também é um elemento próprio, que tem como função destacar de onde foi tirada a citação anterior, deixa o termo em itálico.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;blockquote cite="x.com"&gt;<em>CITAÇÃO</em>&lt;/blockquote&gt;
+                &lt;p&gt;&mdash;AUTOR, &lt;cite&gt;LIVRO, ETC&lt;/cite&gt;&lt;/p&gt;
+              </code>
+            </pre>
+
+        <h4>- q</h4>
+          <p>Similar ao <code>&lt;blockquote&gt;</code>, porém, é utilizado para trechos/frases dentro de paragráfos.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;p&gt;ABCDE&lt;q cite="url"&gt;FGHIJ&lt;/q&gt;&lt;/p&gt;
+              </code>
+            </pre>
+
+        <h4>- abbr</h4>
+          <p>Utilizado envolta de abreviações - acrônimos, siglas, etc -, juntamente dele, geralmente se utiliza o atributo title="", para descrever o que aquela abreviação quer dizer.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;p&gt;&lt;abbr title="HyperText Markup Language"&gt;<strong>HTML</strong>&lt;/abbr&gt;<em>TEXTO</em>&lt;/p&gt;
+              </code>
+            </pre>
+
+        <h4>- br</h4>
+          <p>Elemento vazio utilizado para quebra de linha, ou seja, pra separar uma informação da outra, em cenários relacionados a endereços principalmente.</p>
+          <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;p&gt; RUA XXXXXX &lt;br /&gt;
+                BAIRRO XXXXXX &lt;br /&gt;
+                CIDADE XXXXX &lt;/p&gt;
+              </code>
+            </pre>
+
+        <h4>- time</h4>
+          <p>Utilizado para determinar um horário/data em específico, sendo muitas vezes acompanhado pelo atributo datetime="".</p>
+
+        <h4>- sup</h4>
+          <p>Utilizado principalmente para escrever fórmulas químicas ou equações matemáticas, onde, ele eleva um caractere visualmente.</p>
+
+        <h4>- sub</h4>
+          <p>Utilizado principalmente para fórmulas químicas, desnivelando para baixo um caractere específico.</p>
+
+        <h4>- code</h4>
+          <p>Utilizado para englobar partes do texto com valores de códigos de alguma linguagem de programação ou até próprios códigos, geralmente linhas curtas, tem como mudança visual, uma fonte de mono espaçamento.</p>
+
+        <h4>- pre</h4>
+          <p>Utilizado englobando o <code>&lt;code&gt;</code> caso seja mais de uma linha de código extenso presente dentro do dito cujo.</p>
+
+        <h4>- u</h4>
+          <p>Utilizado para sublinhar falhas ortográficas ou outras anotações não-textuais, como nomes próprios, palavras estrangeiras, etc.</p>
+
+        <h4>- s</h4>
+          <p>Utilizado para englobar frases ou trechos que não são mais tão relevantes - como se o documento tivesse passado por alguma alteração -, por padrão, ela "risca" o trecho englobado.</p>
+
+        <h4>- ruby</h4>
+          <p>Apresenta um pequeno trecho em cima de um texto principal, utilizado principalmente, para mostrar a pronúncia de termos do Leste Asiático, geralmente, junto a esse elemento, teremos como acompanhamento os próximos 2 elementos.</p>
+
+        <h4>- rp</h4>
+          <p>Utilizado como alternativa para navegadores que não suportam <code>&lt;ruby&gt;</code>.</p>
+
+        <h4>- rt</h4>
+          <p>Utilizado para indicar o texto das anotações do elemento <code>&lt;ruby&gt;</code>.</p>
+
+        <h4>- article</h4>
+          <p>Utilizado para retratar um conteúdo independente de uma página web, ou seja, onde esse trecho tem sentido próprio independente do restante do conteúdo da página.</p>
+
+        <h4>- form</h4>
+          <p><strong><em>Pesquisar sobre.</em></strong></p>
+
+        <h4>- label</h4>
+          <p>Utilizado junto do <code>&lt;input&gt;</code> para atribuir um rótulo/nome no site para tal elemento, onde a ligação entre os 2 elementos podem acontecer de 2 formas: de forma implícita - quando se usa os atributos for="" e id="" - ou de forma explicíta - quando o elemento de <code>&lt;input&gt;</code> é colocado dentro do elemento <code>&lt;label&gt;</code>.</p>
+
+        <h4>- fieldset</h4>
+          <p>Utilizado para agrupar elementos de <code>&lt;input&gt;</code>.</p>
+
+        <h4>- legend</h4>
+          <p>Utilizado junto do <code>&lt;fieldset&gt;</code>, para exemplificar sobre o que será o formulário abaixo.</p>
+    </section>
+  </section>      
+  
+  <section id="atributos"> 
+    <h1>Atributos</h1>
+      <h2>Tipos de Atributos:</h2>
+        <ul>
+          <li><a href="#nbooleanos">Atributos não-Booleanos</a></li>
+          <li><a href="#booleanos">Atributos Booleanos</a></li>
+        </ul>
+
+    <section id="nbooleanos">    
+      <h3>Atributos não-Booleanos</h3>
+        <ul>
+          <li><a href="#nbooleanos1">Principais Atributos não-Booleanos</a></li>
+          <li><a href="#nbooleanos2">Outros Atributos não-Booleanos</a></li>
+        </ul>
+
+      <section id="nbooleanos1">
+        <h3>Principais Atributos não-Booleanos</h3>
+
+          <h4>- src</h4>
+            <p>Carrega um recurso externo (links geralmente) para dentro da página.</p>
+            <h5>Exemplos de Possíveis Valores:</h5>
+              <ul>
+                <li>URL absoluta -> src="https://www.exemplo.com"</li>
+                <li>URL relativa -> src="imagens/foto.png"</li>
+              </ul>
+            <h5>Exemplo:</h5>
+            <pre>
+              <code>
+                &lt;img src="img.com"/&gt;
+              </code>
+            </pre>
+              
+
+          <h4>- alt</h4>
+            <p>Usado para frases curtas, geralmente para descrever imagens por acessibilidade.</p>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;img src="" alt=<em>descriçãozinha concisa da imagem</em>/&gt
+                </code>
+              </pre>
+
+          <h4>- href</h4>
+            <p>Acopla um link em algo da página, fazendo com que, ao clicar, o usuário seja redirecionado a tal local.</p>
+            <h5>Exemplos de Possíveis Valores:</h5>
+              <ul>
+                <li> href="tel:NUMERO"</li>
+                <li> href="mailto:EMAIL"</li>
+                <li> href="#algum id do código"</li>
+                <li> href="link externo"</li>
+              </ul>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;a href="https://www.exemplo.com"&gt;<em>palavra clicável</em>&lt;/a&gt;
+                </code>
+              </pre>
+
+          <h4>- target</h4>
+            <p>Define como um link vai ser aberto.</p>
+            <h5>Exemplos de Possíveis Valores:</h5>
+              <ul>
+                <li> target="_blank" -> define que o link será aberto em outra página. </li>              
+                <li> target="_self" -> define que o link será aberto na página ou no iframe em questão (é o valor padrão do atributo target)</li>
+                <li> target="_parent" -> quando em algo diferente de um elemento de âncora, define que o link será aberto no pai do iframe por exemplo.</li>
+                <li> target="_top" -> ignora todos os iframes que seria barreiras pro "_parent" e obrigatoriamente abre na página inteira.</li>
+              </ul>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;a href="https://www.exemplo.com" target="_blank"&gt;XXXX&lt;/a&gt;
+                </code>
+              </pre>
+              
+          <h4>- type</h4>
+            <p>Usado geralmente junto do elemento de <code>&lt;input&gt;</code> para definir qual será o tipo de input utilizado.</p>
+            <h5>Exemplos de Possíveis Valores:</h5>
+              <ul>
+                <li> type="text" (valor padrão)</li>
+                <li> type="password"</li>
+                <li> type="email"</li>
+                <li> type="search"</li>
+                <li> type="tel"</li>
+                <li> type="url"</li>
+                <li> type="number"</li>
+                <li> type="range"</li>
+                <li> type="checkbox"</li>
+                <li> type="radio"</li>
+                <li> type="date"</li>
+                <li> type="datetime-local"</li>
+                <li> type="month"</li>
+                <li> type="week"</li>
+                <li> type="time"</li>
+                <li> type="file"</li>
+                <li> type="color"</li>
+                <li> type="hidden"</li>
+                <li> type="image"</li>
+                <li> type="button"</li>
+                <li> type="submit"</li>
+                <li> type="reset"</li>
+              </ul>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;input type="checkbox"/&gt;
+                </code>
+              </pre>
+
+          <h4>- rel</h4>
+            <p>Utilizado para especificar o link acoplado com o código HTML.</p>
+            <h5>Exemplo de Possíveis Valores:</h5>
+              <ul>
+                <li> rel="stylesheet" -> relaciona ao estilo CSS geralmente</li>
+                <li> rel="preconnect"</li>
+                <li> rel="icon"</li>
+              </ul>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;link rel="stylesheet" href=".styless.css"/&gt;
+                </code>
+              </pre>
+
+          <h4>- id</h4>
+            <p>Adiciona um identificar ÚNICO a um elemento HTML.</p>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;h1 id="identificador"&gt; nesse caso por exemplo, onde você escrever um #identificador, será buscado o elemento &lt;h1&gt;
+                </code>
+              </pre>
+
+          <h4>- class</h4>
+            <p>Funciona semelhantemente ao id, porém, ele pode ser aplicado a mais de 1 elemento, facilitando customização por exemplo.</p>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;h1 class="class"&gt;
+                  &lt;p class="class"&gt;
+                </code>
+              </pre>
+
+          
+          
+          <h4>- srcset</h4>
+            <p>Basicamente, possibilita a colocação de diversos links relacionados a uma mesma mídia, porém, com tamanhos diferentes por exemplo - permitindo com que, o navegador ou o dispositivo do usuário, escolha a resolução mais compatível com o dispositivo.</p>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+              &lt;img 
+                src="imagem-800.jpg" (800x600)
+                srcset="
+                imagem-400.jpg 400w, (400x300)
+                imagem-800.jpg 800w, (800x600)
+                imagem-1600.jpg 1600w (1600x1200)
+                "
+                sizes="(max-width: 600px) 400px, 800px" 
+                width="800" height="600" alt="paisagem bonita" loading="lazy"
+              /&gt;
+                </code>
+              </pre>
+          
+          <h4>- for</h4>
+            <p>Utilizado para relacionar algum elemento a outro elemento através do seu id.</p>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;label for="ABC"&gt;XXXX&lt;/label&gt; &lt;input type="" id="ABC"/&gt; -> isso, além de melhorar a acessibilidade, permite que o usuário, ao clicar no XXXX, ele seja automaticamente instruído a interagir com o &lt;input/&gt;
+                </code>
+              </pre>  
+
+          <h4>- placeholder</h4>
+            <p>Utilizado geralmente com elementos associados ao <code>&lt;form&gt;</code> para fornecer um exemplo no campo que será escrito por exemplo.</p>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;input type="text" id="name" name="name" placeholder="Enter Your Name:"/&gt;
+                </code>
+              </pre>
+      </section>
+
+      <section id="nbooleanos2">
+        <h3>Outros Atributos não-Booleanos</h3>
+
+          <h4>- property</h4>
+            <p>Utilizado como atributo de um metadado principalmente, tem como função, facilitar o compartilhamento/visualização da sua página em outros sites.</p>
+            <h5>Exemplos de Possíveis Valores:</h5>
+              <ul>
+                <li> property="og:title"</li>
+                <li> property="og:description"</li>
+                <li> property="og:image"</li>
+                <li> property="og:url"</li>
+                <li> property="og:type"</li>
+                <li> property="og:site_name"</li>
+              </ul>
+              <p>Note que, juntamente desse atributo, se terá outro - o content="" - que indicará o conteúdo descrito pelo property="og:".</p>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;meta property="og:type" content="website"/&gt;
+                </code>
+              </pre>
+
+          <h4>- fill</h4>
+            <p>Utilizado geralmente juntamente do elemento <code>&lt;svg&gt;</code> para representar qual será a cor preenchida.</p>
+  
+          <h4>- height e width</h4>
+            <p>Define o tamanho horizontal e vertical de algum element - geralmente <code>&lt;img/&gt; e &lt;iframe&gt;</code>.</p>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;iframe src="" height="x" width="y"&gt;&lt;/iframe&gt;
+                </code>
+              </pre>
+
+          <h4>- allow</h4>
+            <p>Define permissões de algum elemento, geralmente <code>&lt;iframe&gt;</code>.</p>
+            <h5>Exemplos de Possíveis Valores:</h5>
+              <ul>
+                <li> allow="fullscreen"</li>
+                <li> allow="camera"</li>
+                <li> allow="autoplay"</li>
+                <li> allow="microphone"</li>
+                <li> allow="geolocation"</li>
+                <li> allow="clipboard-write"</li>
+              </ul>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;iframe src="" height="" width="" allow="fullscreen"&gt;&lt;/iframe&gt;
+                </code>
+              </pre>
+
+          <h4>- loading</h4>
+            <p>Define como será a forma na qual alguma mídia carrega, sendo mais comum entre imagens.</p>
+            <h5>Exemplos de Possíveis Valores:</h5>
+            <ul>
+              <li>Único realmente importante por agora: loading="lazy" -> define que a imagem seja carregada apenas quando estiver próxima de ser visualizada.</li>
+            </ul>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;img src="" loading="lazy"/&gt;
+                </code>
+              </pre> 
+
+          <h4>- sizes</h4>
+            <p>Define quanto que um conteúdo pegará da tela, tendo 3 formas de escrita principais: em pixels absolutos -> sizes="Xpx"; porcentagem -> sizes="Xvw"; condicional -> sizes="(max-width: Xpx) Ypx, Zpx": aqui diz que, caso a tela tenha até Xpx, o conteúdo ocupará Ypx, caso não, será Zpx</p>
+
+          <h4>- referrerpolicy</h4>
+            <p>Regula o quanto de informação um site-alvo anexado no seu site consegue do seu site.</p>
+            <h5>Exemplos de Possíveis Valores:</h5>
+              <ul>
+                <li>Único importante por agora: referrerpolicy="strict-origin-when-cross-origin" -> faz com que seja mostrado apenas o domínio inicial para o site-alvo.</li>
+              </ul>
+
+          <h4>- cite</h4>
+            <p>Valor sempre é uma URL, correspondente a da onde foi tirada uma citação.</p>
+            
+          <h4>- datetime</h4>
+            <p>Utilizado muitas vezes junto do elemento <code>&lt;time&gt;</code>, para "formalizar" de certa forma, o tempo descrito, auxiliando o navegador por exemplo na busca do seu website. Escrita apoiada no ISO 8601.</p>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;time datetime="2024-06-15T15:00"&gt;June 15&lt;/time&gt; 
+                </code>
+              </pre>
+            
+          <h4>- action</h4>
+            <p>Especifica para onde será mandado os dados obtidos por elemento associados ao <code>&lt;form&gt;</code> após o envio do usuário.</p>
+            <h5>Exemplo:</h5>
+              <pre>
+                <code>
+                  &lt;form action="submit.html"&gt;
+                </code>
+              </pre>
+
+          <h4>- minlenght e maxlenght</h4>
+            <p>Utilizado geralmente do <code>&lt;input&gt;</code> para representar a quantidade mínima e máxima de caracteres para o envio da informação coletada.</p>
+
+          <h4>- method</h4>
+            <p>Utilizado geralmente do <code>&lt;form&gt;</code> para especificar qual o HTTP a ser utilizar para o envio dos dados dos formulários. Sendo os valores mais comuns e importantes: GET e POST.</p>
+
+          <h4>- name</h4>
+            <p>Identificar os dados após o envio dos mesmos.</p>
+
+          <h4>- size</h4>
+            <p>Define o tamanho máximo da caixa de entrada de um <code>&lt;input&gt;</code> de texto por exemplo - quantos caracteres pra caixa de texto "ser arrastada pro lado" devido a quantidade de caractere - ou seja, quantos caracteres o usuário consegue ver por vez.</p>
+
+          <h4>- min e max</h4>
+            <p>Valor númerico máximo ou mínimo para algum <code>&lt;input&gt;</code> numérico.</p>
+
+          <h4>- value</h4>
+            <p>Usado para especificar o valor que será enviado ao servidor quando um formulário for submetido - basicamente, uma forma de identiifcar qual o tipo de formulário por exemplo.</p>
+
+          <h4>- rows e cols</h4>
+            <p>Utilizado para especificar o quão visível verticalmente e horizontalmente (respectivamente) o <code>&lt;textarea&gt;</code> é.</p>
+
+
+      </section>
+    </section>
+
+    <section id="booleanos">
+      <h3>Atributos Booleanos (para entendimento do que é um Atributo Booleano, checar em <a href="#explicacoes">Explicações/Conceitos Importantes</a>).</h3>
+
+        <h4>- checked</h4>
+          <p>Cria uma boxe já "checkada" por padrão.</p>
+
+        <h4>- controls</h4>
+          <p>Permite com que o usuário controle um elemento, geralmente de um áudio colocado na página, possibilitando nesse caso, controles como: pause, retomar a produção, etc.</p>
+
+        <h4>- loop</h4>
+          <p>Faz com que a mídia em questão, ao finalizar, já comece de forma imediata.</p>
+
+        <h4>- muted</h4>
+          <p>Mídia inicialmente mutada.</p>
+
+        <h4>- autoplay</h4>
+          <p>Produção da mídia automaticamente quando carregado.</p>
+
+        <h4>- poster</h4>
+          <p>Não compatível com áudio, permite com que um vídeo por exemplo, enquanto não carrega, tenha uma imagem no local que será o vídeo posteriormente.</p>
+
+        <h4>- allowfullscreen</h4>
+          <p>Autoexplicativo, permite com que algo seja aberto em tela cheia.</p>
+
+        <h4>- required</h4>
+          <p>Faz com que um <code>&lt;input&gt;</code> tenha a necessidade de preenchimento para o envio do mesmo.</p>
+
+        <h4>- selected</h4>
+          <p>Faz com que, um <code>&lt;input&gt;</code> por padrão, seja selecionado.</p>
+    </section>
+  </section>
+  <section id="explicacoes">
+    <h1>Explicações/Conceitos Importantes</h1>
+      <h2>Tópicos:</h2>
+        <ul>
+          <li><a href="#oqueeelemento">O que é um Elemento?</a></li>
+          <li><a href="#oqueeelementosem">O que é um Elemento Semântico?</a></li>
+          <li><a href="#oqueeelementovaz">O que é um Elemento Vazio?</a></li>
+          <li><a href="#oqueeanin">O que é aninhamento?</a></li>
+          <li><a href="#relacaopaiefilho">O que é relação de Pai e Filho entre elementos?</a></li>
+          <li><a href="#entidadehtml">O que é uma entidade HTML?</a></li>
+          <li><a href="#oqueeatributo">O que é um Atributo?</a></li>
+          <li><a href="#oqueeatributobool">O que é um Atributo Booleano?</a></li>
+          <li><a href="#caminhorelatvsabsol">Qual a diferença de um Caminho Relativo e um Caminho Absoluto?</a></li>
+          <li><a href="#estruturabase">Estrutura Base de um código em HTML</a></li>
+        </ul>
+
+    <section id="oqueeelemento">
+      <h3>- O que é um Elemento em HTML?</h3>
+      <p>Tendo como significado HyperText Markup Language, é basicamente tudo o que tem de visível (e em certos casos, até fora tela) em uma página, ou seja, define a estrutura e principalmente o conteúdo de uma página - lembrando que, por ser uma linguagem de marcação, serve exclusivamente para isso: conteúdo e estrutura - coisas além disso, como: estilização e interatividade com a página, são funções de outras linguagens/códigos.</p>
+      <p>- Além disso, lembrar sempre da síntaxe padrão de um Elemento: &lt;element&gt;<em>Conteúdo</em>&lt;/element&gt;</p>
+    </section>
+
+    <section id="oqueeelementosem">
+      <h3>- O que é um Elemento Semântico?</h3>
+        <p>É uma categoria de Elementos, que tem como principal função, uma melhor estruturação e organização da página web, além de fornecer diversos tipos de acessibilidade para o usuário - lembrando, porém, que a maioria dos Elementos presentes nessa categoria, não necessariamente mudam algo visualmente na página em questão, visto que o foco é a acessibilidade.</p>
+    </section>
+
+    <section id="oqueeelementovaz">
+      <h3>- O que é um Elemento Vazio?</h3>
+        <p>É um tipo de Elemento que tem como principal característica, a falta de conteúdo próprio, e portanto, não se tem uma tag de fechamento comum - &lt;/element&gt; - embora de poder ser escrito apenas como &lt;element&gt;, há quem utilize um / antes do &gt; - não altera em nada na estrutura ou no funcionamento do código.</p>
+    </section>
+
+    <section id="oqueeanin">
+      <h3>- O que é Aninhamento?</h3>
+        <p>Basicamente é o que organiza o código onde elementos são subcategorias de elementos anteriores, através de espaços, por exemplo:
+          <pre>
+            <code>
+              &lt;element&gt;
+                &lt;element2&gt;&lt;/element&gt;
+              &lt;/element&gt;
+            </code>
+          </pre>
+        </p>
+    </section>
+
+    <section id="relacaopaiefilho">
+      <h3>- O que é relação de Pai e Filho entre Elementos?</h3>
+        <p>Tendo como ponto de partida o tópico anterior - aninhamento - relação de pai e filho, é basicamente, quando se tem um elemento aninhado a outro, e, portanto, o elemento mais superior, seria o pai do elemento inferior aninhado a ele.</p>
+        <h5>Exemplo:</h5>
+        <pre>
+            <code>
+              &lt;element&gt;                        -> seria o pai
+                &lt;element2&gt;&lt;/element&gt;     -> filho
+              &lt;/element&gt;
+            </code>
+          </pre>
+    </section>
+
+    <section id="entidadehtml">
+      <h3>- O que é uma entidade HTML?</h3>
+        <p>São amontoados de caracteres usados para digitarmos de forma visual, algo que seria lido pela máquina como um código &lt; -> isso por exemplo. Para representarmos isto em uma página, teremos 3 principais formas de tal: codificação baseado em &X;, onde X é o código específico; forma numérica, &#X, onde X é algum número; e por fim, utilizando uma codificação baseado na tabela ASCII -> &#X - onde X é um código em hexadecimal correspondente a um caractere na tabela ASCII.</p>
+    </section>
+
+    <section id="oqueeatributo">
+      <h3>- O que é um Atributo em HTML?</h3> 
+        <p>É basicamente algo que fornecerá uma característica, informação, tipagem, etc, à um elemento HTML específico, tendo sua colocação, no elemento de abertura - ou seja &lt;elemento atributos&gt; - além disso, a maioria dos atributos, sempre assumem um valor específico, correlacionado ao que você busca pro seu elemeneto HTML.</p>
+    </section>
+
+    <section id="oqueeatributobool">
+      <h3>- O que é um Atributo Booleano?</h3>
+        <p>São elementos que não necessitam de um valor para funcionarem, a presença deles em um elemento, já basta pro seu valor - de certa forma, seria como se quando ele está no elemento, o atributo já está valendo, e se ele estiver ausente, ele estaria "desligado", fazendo com que, não seja necessário um valor específico.</p>
+    </section>
+
+    <section id="caminhorelatvsabsol">
+      <h3>- Qual a diferença de um Caminho Relativo e um Caminho Absoluto?</h3>
+      <p>Primeiramente, o conceito de Caminho no geral no contexto de códigos - basicamente, onde algo, geralmente uma mídia, está localizado - a partir disso, teremos 2 formas de identificar/específicar onde está localizado tal algo, o caminho relativo: onde ele começa a partir de onde está sendo realizado a busca, ou seja, a partir de onde será seu "destino final", por exemplo: se eu tenho um código em index.html, e tenho uma imagem a ser buscada para esse código, em uma pasta diferente da mesma, através de um caminho relativo, partindo do index.html, eu vou até a pasta onde está inserida tal imagem, exemplo: src="..src/image.png" (isso será visto de uma forma mais clara no exemplo abaixo). Já um caminho absoluto, em sua maioria, é uma URL comlpeta de algum website, entretanto, podendo ser descrita de certa forma como um caminho relativo, porém, diferentemente do caminho relativo, ele sempre partirá na raiz da coleção de arquivos.</p>
+      <p>Para se fazer esses caminhos, principalmente entre arquivos em uma pasta, se utiliza certos códigos para tal:
+      <ul>
+        <li> / -> é basicamente o que "separa" um arquivo do outro (imagens/foto.jpg -> significa entrar em imagens, e depois em foto.jpg)</li>
+        <li> ./ ->  arquivo procurado está na pasta atual (apesar de sua ausência não ser algo tão necessário, visto que "imagem.jpg" e "./imagem.jpg" na maioria dos casos resulta no mesmo)</li>
+        <li> ../ -> voltar uma pasta</li>
+      </ul>
+      </p>
+      <h5>Exemplos Gerais:</h5>
+      <pre>
+        <code>
+          Tendo esse conjunto de pastas/arquivos: 
+          my-app/
+          ├─ public/
+          │  ├─ favicon.ico
+          │  ├─ index.html
+          ├─ src/
+          │  ├─ index.css
+          │  ├─ index.js
+                            -Iremos utilizar alguns casos para exemplificar a utilização de cada símbolo:
+          1. Vamos supor que queremos colocar o favicon.ico em um atributo presente no index.html, como possível ver no esquema, os 2 fazem parte da mesma pasta, portanto, para podermos procurar o favicon.ico, apenas um "src="./favicon.ico"> é o suficiente.
+          2. Agora vamos supor que queremos colocar dentro do index.html, o index.css, nesse caso, utilizaremos: src="../src/index.css">.
+          3. E no caso de um URL absoluto (assumindo que queremos buscar o favicon.ico): src="/public/favicon.ico"
+        </code>
+      </pre>
+    </section>
+
+    <section id="estruturabase">
+      <h3>Estrutura Base de um códiogo em HTML</h3>
+      <p>Teremos uma melhor represetanção de uma base para um código HTML no próximo tópico (<a href="#boilerplate">Boilerplate (estrutura padrão)</a>), porém, coisas como: declaração do tipo de linguagem utilizada (<code>&lt;!DOCTYPE html&gt;</code>), o idioma utilizado (<code>&lt;html lang="idioma"&gt;), sempre serão presentes.</code></p>
+    </section>
+  </section>
+  <section id="boilerplate">
+    <h1>Boilerplate (estrutura padrão)</h1>
+      <h2>Tópicos:</h2>
+        <ul>
+          <li><a href="#boilerplateconc">O que é um Boilerplate?</a></li>
+          <li><a href="#exboilerplate">Exemplo de Boilerplate</a></li>
+        </ul> 
+    <section id="boilerplateconc">
+      <h3>- O que é um Boilerplate?</h3>
+        <p>É basicamente algo utilizado por quase todo programador, que é como se fosse um esqueleto base, onde já se tem coisas essenciais para quase todo e qualquer website, fazendo com que, o programador já parta de uma base sólida, sem a necessidade de quebrar cabeça com algo tão "comum/geral".</p>
+    </section>  
+
+    <section id="exboilerplate">
+      <h3>- Exemplo de Boilerplate</h3>
+      <code>
+        <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html lang="en"&gt;
+            &lt;head&gt;
+              &lt;meta charset="utf-8" /&gt;
+
+              &lt;meta name="description" content=""&gt;
+
+              &lt;meta property="og:title" content=""&gt;
+              &lt;meta property="og:description" content=""&gt;
+              &lt;meta property="og:type" content="website"&gt;
+              &lt;meta property="og:url" content=""&gt;
+              &lt;meta property="og:image" content=""&gt;
+              &lt;meta property="og:site_name" content=""&gt;
+
+              &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+              &lt;title&gt;&lt;/title&gt;
+              &lt;link rel="stylesheet" href="./styles.css" /&gt;
+
+            &lt;/head&gt;
+
+            &lt;body&gt;
+            <em>conteúdo da página</em>
+            &lt;/body&gt;
+          &lt;/html&gt;
+        </pre>
+      </code>
+    </section>
+  </section>
+</body>
+</html>

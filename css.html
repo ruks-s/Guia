@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Guia</title>
+</head>
+<body>
+    <a id="voltar" href="inicio.html">Voltar</a>
+  <header>
+    <h1> CSS - Conceitos Básicos, Importantes, Nichos</h1>
+    <nav>  
+      <h2>Tópicos Gerais</h2>
+        <ul>
+          <li><a href="#conceitos">Conceitos Importantes</a></li>
+          <li><a href="#importantes">Agrupamentos Importantes</a></li>
+          <li><a href="#nichos">Agrupamentos Importantes mas Nichados</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <section id="conceitos">
+     <h1>Conceitos Importantes</h1>
+        <h2>Sumário</h2>
+            <ul>
+                <li><a href="#o-que-e-css">O que é CSS?</a></li>
+                <li><a href="#formas-de-utilizar-css">Formas de Utilizar CSS</a></li>
+                <div class="box">
+                        <li><a href="#seletores">Seletores</a></li>
+                            <details>
+                                <summary>Detalhes: </summary>
+                                    <ul>
+                                        <li><a href="#selecao-direta">Seleção Direta</a></li>
+                                        <li><a href="#selecao-por-id">Seleção por ID</a></li>
+                                        <li><a href="#selecao-por-classe">Seleção por Classe</a></li>
+                                        <li><a href="#selecao-por-atributo">Seleção por Atributo</a></li>
+                                        <li><a href="#selecao-por-pseudos">Seleção por Pseudos</a></li>
+                                        <li><a href="#seletor-universal">Seletor Universal</a></li>
+                                        <li><a href="#descendant-combinator">Descendant Combinator</a></li>
+                                        <li><a href="#child-combinator">Child Combinator</a></li>
+                                        <li><a href="#next-sibling-combinator">Next-sibling Combinator</a></li>
+                                        <li><a href="#subsequent-sibling-combinator">Subsequent-sibling Combinator</a></li>
+                                        <li><a href="#ordem-de-prioridade">Ordem de Prioridade</a></li>
+                                    </ul>
+                            </details>
+                </div>
+                <li><a href="#classificacao">Classificação dos Elementos em HTML e CSS (ótica de dimensões)</a></li>
+                <li><a href="#unidades-de-medida">Unidades de Medida</a></li>
+                <li><a href="#dimensoes-dos-elementos">Dimensões dos Elementos</a></li>
+            </ul>
+
+    <section id="o-que-e-css">
+        <h3>O que é CSS?</h3>
+            <p>É uma linguagem utilizada para a estilização de uma linguagem de marcação (HTML por exemplo), que tem como tradução Cascading Style Sheets (Folhas de Estilo em Cascata) - e bom, apenas o nome da linguagem já explicita partes de como ela é - "style sheets" visto que é a responsável por estilizar a página, e "cascading" por conta do seu comportamento de aplicação dos estilos (de seu funcionamento basicamente, que funciona "em cascata") que será abordada mais a frente.</p>
+            <p>Por agora, é bom sabermos a sintaxe básica que todo código em CSS vai se basear (em maioria), que é o seguinte: </p>
+                <pre>
+                    <code>
+                        selector &#123; 
+                            propriety: value;
+                        &#125;
+                    </code>
+                </pre>
+            <p>Onde, basicamente, o selector corresponde ao elemento selecionado (a forma de escolha varia bastante, será abordado posteriormente), propriety é correspondente ao que será personalizado, e value o valor da propriedade mudada, vale destacar o ";" sempre no final de cada valor para cada propriedade - e lembrando que essa é a forma base, tem-se outras formas de utilizar o CSS que podem fugir levemente aparentemente dessa base, mas sempre vão estar relacionadas a essa sintaxe. </p>
+    </section>
+    <section id="formas-de-utilizar-css"> 
+        <h3>Formas de Utilizar CSS</h3>
+            <p>Bom, existem 3 formas principais de estilizar os elementos - quando digo "formas", são jeitos diferentes de utilizar códigos no estilo CSS para personalizar algum elemento HTML, podendo esses códigos, estarem dentro ou fora do documento HTML. As 3 principais são: </p>
+            <ul>
+                <li><a href="#inline">Inline</a></li>
+                <li><a href="#internal">Internal</a></li>
+                <li><a href="#external">External</a></li>
+            </ul>
+
+        <section id="inline">
+            <h4>Inline</h4>
+                <p>Consiste em colocar o código CSS, juntamente do atributo "style" dentro do próprio elemento, como descrito abaixo: </p>
+                    <pre>
+                        <code>
+                            &lt;element style="color: green;"&gt;conteúdo&lt;/element&gt;
+                        </code>
+                    </pre>
+                <p>Como mostrado acima, o estilo é aplicado da forma mais direta possível no elemento - literalmente dentro do mesmo - esse tipo de estilização é bom em casos que você precisa mudar coisas pontuais, visto que eles tem uma prioridade superior às outras formas de estilização (isso será visto posteriormente em <a href="#ordem-de-prioridade">Ordem de Prioridade</a>).</p>
+        </section>
+        <section id="internal">
+            <h4>Internal</h4>
+                <p>Consiste em colocar a estilização (dessa vez, seguindo a sintaxe colocada anteriormente), logo na cabeça do documento HTML (&lt;head&gt;), com a utilização do elemento &lt;style&gt; - apesar de possibilitar uma customização mais ampla do o que o anterior, os problemas relacionados a esse modo de estilização é a parte de reaproveitamento das estilizações em projetos grandes, além de aumentar bastante o tamanho do documento HTML.</p>
+                    <pre>
+                        <code>
+                            &lt;head&gt;
+                                &lt;style&gt;
+                                    element &#123;
+                                        propriety: value;
+                                    &#125;
+                                &lt;/style&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;element&gt;
+                            &lt;/body&gt;
+                        </code>
+                    </pre>
+        </section>
+        <section id="external">
+            <h4>External</h4>
+                <p>Tipo de estilização mais utilizado, que consiste em fazer um documento .css focado apenas na estilização do site - é o mais utilizado por conta da facilidade de manutenção que ele fornece, além do reaproveitamento facilitado e melhor organização em relação a divisão de funções de cada documento.</p>
+                    <pre>
+                        <code>
+                            documento.css 
+                                selector &#123;
+                                    propriety: value;
+                                &#125;
+                        </code>
+                    </pre>
+        </section>
+    </section>
+    <section id="seletores">
+        <h3>Seletores</h3>
+            <p>Seletores são os responsáveis por especificar qual ou quais elementos serão alvos da estilização descrita no código CSS em questão, isso pode ser feito de diversas maneiras (que serão abordadas posteriormente), seja diretamente escrevendo o próprio elemento como sendo o seletor, ou até utilizando graus de parentesco dos elementos HTML para tal (para fins de facilidade, consideraremos todos os códigos basicamente escritos como se fossem para um documento CSS a parte do HTML). Tipos de Seletores: </p>
+            <ul>
+                <li><a href="#selecao-direta">Seleção Direta</a></li>
+                <li><a href="#selecao-por-id">Seleção por ID</a></li>
+                <li><a href="#selecao-por-classe">Seleção por Classe</a></li>
+                <li><a href="#selecao-por-atributo">Seleção por Atributo</a></li>
+                <li><a href="#selecao-por-pseudos">Seleção por Pseudos</a></li>
+                <li><a href="#seletor-universal">Seletor Universal</a></li>
+                <li><a href="#descendant-combinator">Descendant Combinator</a></li>
+                <li><a href="#child-combinator">Child Combinator</a></li>
+                <li><a href="#next-sibling-combinator">Next-sibling Combinator</a></li>
+                <li><a href="#subsequent-sibling-combinator">Subsequent-sibling Combinator</a></li>
+                <li><a href="#ordem-de-prioridade">Ordem de Prioridade</a></li>
+            </ul>
+
+        <section id="selecao-direta">
+            <h4>Seleção Direta</h4>
+                <p>Consiste em utilizar o nome próprio de um elemento como seletor, possibilitando, portanto, uma generalização na personalização de diversos elementos iguais. Tem sua sintaxe como: </p>
+                    <pre>
+                        <code>
+                            nome do elemento &#123;
+                                propriedade: valor;
+                            &#125;
+                        </code>
+                    </pre>
+        </section>
+        <section id="selecao-por-id"> 
+            <h4>Seleção por ID</h4>
+                <p>Como o nome sugere, é uma seleção baseada no ID de um elemento específico (lembremos que ID é algo único, apenas 1 elemento tem ele por vez) esse tipo de seleção é especialmente bom para casos específicos, onde talvez o elemento já possa ter um classe geral, e tals. Se caracteriza por um "#" precedido do valor do ID: </p>
+                    <pre>
+                        <code>
+                            #valor do id &#123;
+                                propriedade: valor;
+                            &#125;
+                        </code>
+                    </pre>
+        </section>
+        <section id="selecao-por-classe">
+            <h4>Seleção por Classe</h4>
+                <p>É provavelmente o sistema mais comum de vermos, que se baseia, logicamente, nas classes dos elementos, esse método é bom principalmente por conta da diversidade e especificação conjunta que ele dá para a estilização dos elementos, sendo caracterizado por um "." antes do valor da classe: </p>
+                    <pre>
+                        <code>
+                            .valor da classe &#123;
+                                propriedade: valor;
+                            &#125;
+                        </code>
+                    </pre>
+        </section>
+        <section id="selecao-por-atributo">
+            <h4>Seleção por Atributo</h4>
+                <p>Logicamente, como o nome sugere, se baseia em alguma característica do atributo para a seleção dos elementos que serão customizados, tendo sua sintaxe base sendo: </p>
+                    <pre>
+                        <code>
+                            nomedoelemento&#91;atributo&#93; &#123;
+                                propriedade: valor;
+                            &#125;
+                        </code>
+                    </pre>
+                <p>Além dessa forma mais básica de seleção, tem-se outras formas que se baseiam no mesmo princípio, mas adicionando alguma nuance, segue abaixo alguns exemplos: </p>
+                    <pre>
+                        <code>
+                            elemento&#91;atributo~=valor&#93; &#123;&#125; -> atinge todos os elementos que tem o atributo com o valor especificado
+                            elemento&#91;atributo^=valor&#93; &#123;&#125; -> atinge todos os elementos que tem o atributo com o inicio que é o valor especificado
+                            elemento&#91;atributo$=valor&#93; &#123;&#125; -> atinge todos os elementos que tem o atributo com o final que é o valor especificado
+                        </code>
+                    </pre>
+        </section>
+        <section id="selecao-por-pseudos">
+            <h4>Seleção por Pseudos</h4>
+                <p>São seletores condicionados a características específicas do elemento (estado, condições especiais, etc), caracterizadas por um ":" ou "::" entre o elemento e a pseudo-classe/pseudo-elemento. Sintaxe Base: </p>
+                    <pre>
+                        <code>
+                            elemento:pseudoclasse &#123;
+                                propriedade: valor;
+                            &#125;
+                        </code>
+                    </pre>
+                <p>Existem diversos, quase infinitos pseudo-seletores, mas, tem alguns que são bem mais recorrentes que valem a pena ter eles na cabeça: </p>
+                    <pre>
+                        <code>
+                            elemento:active &#123;&#125; -> personaliza o elemento quando ele ta ativado
+                            elemento:hover &#123;&#125; -> personaliza o elemento quando ele tem um mouse por cima
+                            elemento:focus &#123;&#125; -> personaliza o elemento quando ele é focado por teclado
+                            elemento:visited &#123;&#125; -> personaliza o elemento quando ele já foi visitado 
+                            elemento:checked &#123;&#125; -> personaliza o elemento quando ele foi checkado 
+                        </code>
+                    </pre>
+        </section>
+        <section id="seletor-universal">
+            <h4>Seletor Universal</h4>
+                <p>Como o próprio nome sugere, aplica uma estilização a todos os elementos do documento HTML, apesar de ter sua utilidade, por ter o mais baixo nível de prioridade dentre os seletores, ele acaba ficando meio de escanteio quando fazemos um site, mas bom saber que existe - caracterizado por um "*" antes do código CSS: </p>
+                    <pre>
+                        <code>
+                            * &#123;
+                                propriedade: valor;
+                            &#125;
+                        </code>
+                    </pre>
+        </section>
+        <section id="descendant-combinator">
+            <h4>Descendant Combinator</h4>
+                <p>A partir de agora, entraremos nos seletores baseados em relações de parentesco presente entre os elementos HTML, começando pelo Descendant, que se baseia em escolher apenas os elementos selecionados em segunda instância que sejam filhos, netos, etc, do primeiro elemento colocado, não precisa-se de nada entre os elementos, exemplo: </p>
+                    <pre>
+                        <code>
+                            elemento1 elemento2 &#123;
+                                propriedade: valor;
+                            &#125;
+                        </code>
+                    </pre>
+                <p>Nesse caso em questão, só serão estilizados, os elemento2 que são, independentemente da profundidade (filhos, netos, etc), descendentes do elemento1.</p>
+        </section>
+        <section id="child-combinator">
+            <h4>Child Combinator</h4>
+                <p>Baseia-se em selecionar elementos que são filhos diretos de um outro elemento, sendo caracterizado pela presença de um ">" entre os elementos: </p>
+                    <pre>
+                        <code>
+                            elemento1 > elemento2 &#123;
+                                propriedade: valor;
+                            &#125;
+                        </code>
+                    </pre>
+                <p>Ou seja, só serão estilizados os elemento2 que são <strong>filhos direto</strong> do elemento1.</p>
+        </section>
+        <section id="next-sibling-combinator">
+            <h4>Next-sibling Combinator</h4>
+                <p>Seleciona o elemento-irmão imediatamente seguinte (ou seja, atinge, a priori, apenas 1 elemento), caracterizado pela presença de um + entre os elementos, exemplo: </p>
+                    <pre>
+                        <code>
+                            elemento1 + elemento2 &#123;
+                                propriedade: valor;
+                            &#125;
+                        </code>
+                    </pre>
+                <p>Será estilizado apenas o elemento2 que é irmão imediatamente seguinte ao elemento1.</p>
+        </section>
+        <section id="subsequent-sibling-combinator">
+            <h4>Subsequent-sibling Combinator</h4>
+                <p>Seleciona todos os irmãos posteriores ao elemento especificado, caracterizado pela presença de um ~, exemplo: </p>
+                    <pre>
+                        <code>
+                            elemento1 ~ elemento2 &#123;
+                                propriedade: valor;
+                            &#125;
+                        </code>
+                    </pre>
+                <p>Apenas serão selecionados todos os elementos2, que sejam irmãos do elemento1, e que estejam abaixo dele na organização da página.</p>
+        </section>
+        <section id="ordem-de-prioridade">
+            <h4>Ordem de Prioridade</h4>
+                <p>Agora que temos conhecimento sobre os diversos seletores que existem, precisamos saber como a estilização CSS se comporta quando temos por exemplo, um seletor de id e um universal aplicado a um mesmo elemento - isso vai ser definido pela prioridade de cada tipo de seletor. Tem sim um sistema bem complexo por trás de como é definido essa escolha, mas, a termos de simplificação, podemos utilizar essa regra: Inline Style > ID > Class > Element > Universal.</p>
+                <p>Porém, como nem tudo são flores, tem algumas coisas que fazem com que essa ordem de prioridade seja contornada, como por exemplo, a existência de uma chave de importância (!important) em alguma estilização, que faz com que ela seja prioridade quase que em todo caso. Além disso, tem-se outros fatores analisados pelo navegador que faz ele selecionar ou não outro tipo de estilização, mas a regra geral é: </p>
+                <p>1. Relevância: olhando todas as estilizações aplicadas em cima de um elemento, e analisando certas coisas que podem estar em vigor - como regras baseadas nas características do dispositivos ou da tela.</p>
+                <p>2. Após isso, o algoritmo considera a origem e a importância: isto é, considera se o estilo é o padrão do navegador ou do usuário - e a origem, considerando regras marcadas por !important, acima das outras regras independente da origem.</p>
+                <p>3. Após isso, é analisado a especificidade/prioridade falada anteriormente.</p>
+                <p>4. E se no fim, tiver 2 estilizações com a mesma prioridade aplicadas em cima de um elemento, a que aparece por último no código CSS, será aplicada (exemplo clássico, é entre o estilo de CSS internal e external - ambas tem o mesmo peso em questão de prioridade, o que define qual será aplicada, é qual aparece por último dentro do &lt;head&gt; *no caso do internal, é quando aparece o &lt;link&gt;</p>
+        </section>
+    </section>
+    <section id="classificacao">
+        <h3>Classificação dos Elementos em HTML e CSS (ótica de dimensões)</h3>
+            <p></p>
+        <section>
+
+        </section>
+    </section>
+  </section>
